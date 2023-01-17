@@ -30,17 +30,15 @@ public class UAS1E {
         return WhatYouPosts;
     }
 
+    private String UserID;
+    private String UserName;
+    private String WhatYouPosts;
     public UAS1E (String userid,String username,String whatYourPosts, ArrayList<String> WhatYourPosts){
         this.UserID = userid;
         this.UserName = username;
         this.WhatYouPosts = whatYourPosts;
 
     }
-
-
-    private String UserID;
-    private String UserName;
-    private String WhatYouPosts;
     static class Messages{
         public void setUserID(String userID) {
         }
@@ -51,10 +49,23 @@ public class UAS1E {
         public void setWhatYouPosts(String msg) {
         }
     }
+    private ArrayList<Messages> MY_MESSAGES;
 
     private void setMY_MESSAGES(ArrayList<Messages> xMsg) {
+        this.MY_MESSAGES = xMsg;
+    }
+    public ArrayList<Messages> getMY_MESSAGES() {
+        return MY_MESSAGES;
     }
     public UAS1E(){}
+    private void showPosts(){
+    }
+
+    public void showPosts(UAS1E social){
+        System.out.println(social.getMY_MESSAGES());
+    }
+
+
 
     public static void main(String[] args) {
         UAS1E social = new UAS1E();
@@ -76,8 +87,15 @@ public class UAS1E {
         }
         social.setMY_MESSAGES(xMsg);
 
-}
+        //TO DO:
+        /*
+         * TODO :
+         * Buatlah Method ShowPosts untuk menampilkan
+         * pesan yang telah di posting oleh user
+         */
+        social.showPosts(social);
 
+}
 }
 
 
